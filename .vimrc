@@ -109,9 +109,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" From time to time the mouse is useful
-set mouse=a
-
 " Remove status line which overlaps with the screen status
 set ls=0
 
@@ -150,6 +147,9 @@ set nowb
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use tabs instead of spaces
+set noexpandtab
+
 " Be smart when using tabs ;)
 set smarttab
 
@@ -201,6 +201,11 @@ set viminfo^=%
 map <C-right> <ESC>:bn<CR>
 map <C-left> <ESC>:bp<CR>
 
+" Turn off highlighting of search hits
+map <F3> :nohl <CR>
+
+" Fix syntax highlighting
+noremap <F11> <Esc>:syntax sync fromstart<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -216,19 +221,6 @@ map <f9> :w<cr><leader>ll
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
-
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -240,4 +232,3 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Remove tabline
 set showtabline=1
-
