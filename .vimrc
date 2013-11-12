@@ -109,9 +109,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Show line numbers
-set number
-
 " Remove status line which overlaps with the screen status
 set ls=0
 
