@@ -78,7 +78,6 @@ alias lt='ls *.txt'
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-<<<<<<< HEAD
 
 ########## Personal settings ##################
 export PDB=/usr/local/CAME/PDB/Pdb-Mirror/rcsb/current/
@@ -91,5 +90,3 @@ export EDITOR=vim
 export BIBINPUTS='.:/usr/local/CAME/share/literature/bibtex/'
 export BSTINPUTS='.:/usr/local/CAME/share/literature/bibtex/:'
 ###############################################
-=======
->>>>>>> 7633d01e1c3294a98727534f47f5d452476a54e9
